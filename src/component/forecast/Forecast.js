@@ -1,10 +1,15 @@
 import React from 'react'
 import './forecast.css'
-import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemPanel, AccordionItemButton } from 'react-accessible-accordion'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemPanel,
+  AccordionItemButton
+} from 'react-accessible-accordion'
 
 const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 const Forecast = ({ data }) => {
-
   const dayInAWeek = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
   console.log(forecastDays)
@@ -24,7 +29,6 @@ const Forecast = ({ data }) => {
                   <label className='min-max'> {item.main.temp}°C</label>
                 </div>
               </AccordionItemButton>
-
             </AccordionItemHeading>
             <AccordionItemPanel>
               <div className="daily-details-grid">
